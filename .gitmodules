@@ -1,0 +1,3 @@
+[submodule ".\\Practice\\"]
+	path = .\\Practice\\
+	url = git@github.com:sipakhti/CACP2033-DSA.git
