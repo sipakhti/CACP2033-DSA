@@ -1,3 +1,3 @@
 [submodule "Practice"]
 	path = Practice
-	url = git@github.com:sipakhti/C-PLUS-data-structures.git
+	url = https://github.com/sipakhti/C-PLUS-data-structures.git
