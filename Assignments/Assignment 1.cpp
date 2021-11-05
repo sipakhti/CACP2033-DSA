@@ -1,7 +1,11 @@
 #include <iostream>
 #include <string>
-// #include "Assignment 1.h"
 
+/**
+ * @brief this is the first assignment of DSA
+ * @author Umer Mehmood Khan Rana L1F20ASCS0028 ADP-33
+ * 
+ */
 using namespace std;
 
 
@@ -21,19 +25,21 @@ void printArray(int*, int);
 void printArray(char*);
 
 namespace COLOR {
-    const string GREENBKGRD = "\033[42m";
     const string WARNING_TEXT = "\033[31m";
-    const string FRAMED = "\033[51m";
+    const string GREEN_TEXT = "\033[32m";
+    const string YELLOW_TEXT = "\033[33m";
+    const string BLUE_TEXT = "\033[34m";
     const string RESET = "\033[0m";
-    const string UNDERLINE = "\033[4m";
-
-
 };
 
 
 int main(){
 
-
+questionOne();
+questionTwo();
+questionThree();
+questionFour();
+questionFive();
 return 0;
 
 }
@@ -43,12 +49,19 @@ return 0;
  * 
  */
 void questionOne(){
+    string question = "How to insert and print one dimension array elements?\nSize of the array is 10.";
+    cout << COLOR::GREEN_TEXT << "===============================================" << endl;
+    cout << COLOR::YELLOW_TEXT << "QUESTION 1" << endl;
+    cout << COLOR::BLUE_TEXT << question << COLOR::RESET << endl;
     const int size = 10;
     int numbers[size];
     for (size_t i = 0; i < size; i++)
         numbers[i] = rand();
 
     printArray(numbers, size);
+    cout << endl;
+    cout << COLOR::GREEN_TEXT << "===============================================" << endl;
+
     
 
 }
@@ -59,6 +72,10 @@ void questionOne(){
  * 
  */
 void questionTwo(){
+    string question = "Take Inputs from User and Store Them in an Array. And also print array elements?\nSize of the array is 7.";
+    cout << COLOR::GREEN_TEXT << "===============================================" << endl;
+    cout << COLOR::YELLOW_TEXT << "QUESTION 2" << endl;
+    cout << COLOR::BLUE_TEXT << question << COLOR::RESET << endl;
     const int size = 7;
     int numbers[size];
     cout << "Please enter " << size << " numbers as prompted!" << endl;
@@ -71,7 +88,8 @@ void questionTwo(){
     cout << "Elements in the array" << endl;
     for (size_t i = 0; i < size; i++)
         cout << "Value at Index[" << i << "]: " << numbers[i] << endl;
-    
+    cout << endl;
+    cout << COLOR::GREEN_TEXT << "===============================================" << endl;
     
 }
 
@@ -80,7 +98,11 @@ void questionTwo(){
  *  The Array is Arr[10]={6,66,3,12,1,3,44,51,76,8}. MARKS 15
  * 
  */
-void quesionThree(){
+void questionThree(){
+    string question = "Write a C++ program to find k largest elements in a given array of integers.\nThe Array is Arr[10]={6,66,3,12,1,3,44,51,76,8}.";
+    cout << COLOR::GREEN_TEXT << "===============================================" << endl;
+    cout << COLOR::YELLOW_TEXT << "QUESTION 3" << endl;
+    cout << COLOR::BLUE_TEXT << question << COLOR::RESET << endl;
     int Arr[10]={6,66,3,12,1,3,44,51,76,8};
     int max = INT_MIN;
     for (size_t i = 0; i < 10; i++)
@@ -88,7 +110,8 @@ void quesionThree(){
             max = Arr[i];
 
     cout << "MAX: " << max;
-    
+    cout << endl;
+    cout << COLOR::GREEN_TEXT << "===============================================" << endl;
 }
 
 
@@ -98,6 +121,10 @@ void quesionThree(){
  * 
  */
 void questionFour(){
+    string question = "Write a C++ program to find the most occurring element in an array of integers.\nThe Array is Arr[10]={1,66,3,12,1,3,44,51,76,3}.";
+    cout << COLOR::GREEN_TEXT << "===============================================" << endl;
+    cout << COLOR::YELLOW_TEXT << "QUESTION 4" << endl;
+    cout << COLOR::BLUE_TEXT << question << COLOR::RESET << endl;
     int numbers[10]={1,66,3,12,1,3,44,3,76,3};
     int count = 0;
     int maxOccured;
@@ -121,6 +148,8 @@ void questionFour(){
 
     cout << "repeated: " << count << endl;
     cout << "number: " << maxOccured << endl;
+    cout << endl;
+    cout << COLOR::GREEN_TEXT << "===============================================" << endl;
     
 }
 
@@ -130,6 +159,10 @@ void questionFour(){
  * 
  */
 void questionFive(){
+    string question = "Take Inputs from User and Store Them in a two dimension array? And also sort the array.";
+    cout << COLOR::GREEN_TEXT << "===============================================" << endl;
+    cout << COLOR::YELLOW_TEXT <<  "QUESTION 5" << endl;
+    cout << COLOR::BLUE_TEXT << question << COLOR::RESET << endl;
     int rows;
     cout << "How many names will you be entering: ";
     cin >> rows;
@@ -152,6 +185,9 @@ void questionFive(){
     // SORTING THE ARRAY
     sort(names, rows);
     printArray(names, rows);
+
+    cout << endl;
+    cout << COLOR::GREEN_TEXT << "===============================================" << COLOR::RESET <<  endl;
 
     delete (names);
     
