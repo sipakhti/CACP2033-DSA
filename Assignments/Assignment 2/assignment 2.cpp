@@ -1,7 +1,9 @@
 #include <iostream>
 
 using namespace std;
-
+// signature for binarySearchRecursive
+int binarySearchRecursive(int* , int , int);
+int binarySearchRecursive(int* , int , int, int);
 template <typename T>
 class stackType
 {
@@ -66,6 +68,7 @@ public:
         {
             return data[topVal];
         }
+        return T();
     }
     // check if stack is empty
     bool isEmpty()
@@ -210,6 +213,7 @@ public:
         {
             return data[frontVal];
         }
+        return T();
     }
     // check if queue is empty
     bool isEmpty()
@@ -342,3 +346,45 @@ int main(){
 //     }
 //     cout << endl;
 // }
+
+
+// function to do a biary search
+int binarySearch(int* numbers, int length, int searchValue)
+{
+    int low = 0;
+    int high = length - 1;
+    int mid;
+    while (low <= high)
+    {
+        mid = (low + high) / 2;
+        if (numbers[mid] == searchValue)
+            return mid;
+        else if (numbers[mid] < searchValue)
+            low = mid + 1;
+        else
+            high = mid - 1;
+    }
+    return -1;
+}
+
+
+// a recursive function to do a binary search
+int binarySearchRecursive(int* numbers, int length, int searchValue)
+{
+    int low = 0;
+    int high = length - 1;
+    int mid;
+    if (low <= high)
+    {
+        mid = (low + high) / 2;
+        if (numbers[mid] == searchValue)
+            return mid;
+        else if (numbers[mid] < searchValue)
+            return binarySearchRecursive(numbers, mid + 1, high, searchValue);
+        else
+            return binarySearchRecursive(numbers, mid - 1, low, searchValue);
+    }
+    return -1;
+}
+
+
